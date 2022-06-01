@@ -36,7 +36,7 @@ class _WithHiddenDrawerState extends State<WithHiddenDrawer> {
         }
       },
       child: Scaffold(
-        backgroundColor: Colors.blueGrey[700],
+        backgroundColor: Theme.of(context).colorScheme.secondary,
         body: Stack(
           children: [
             Container(

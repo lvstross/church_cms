@@ -29,7 +29,9 @@ class MoreScreen extends StatelessWidget {
     Function openDrawer = context.watch<HiddenDrawerProvider>().openDrawer;
 
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(MoreScreen.title),
         leading: IconButton(
           icon: const Icon(Icons.menu),
@@ -62,9 +64,10 @@ class MoreScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(10),
                 child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.blueGrey,
-                      borderRadius: BorderRadius.all(Radius.circular(20))),
+                  decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primary,
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(20))),
                   child: Center(
                       child: Text(
                     screens[index].title,

@@ -15,7 +15,9 @@ class HomeScreen extends StatelessWidget {
     Function openDrawer = context.watch<HiddenDrawerProvider>().openDrawer;
 
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(HomeScreen.title),
         leading: IconButton(
           icon: const Icon(Icons.menu),

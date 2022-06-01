@@ -30,7 +30,9 @@ class MediaListScreen extends StatelessWidget {
           }
         });
         return Scaffold(
+          backgroundColor: Theme.of(context).colorScheme.background,
           appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
             title: Text(MediaListScreen.title),
             leading: IconButton(
               icon: const Icon(Icons.menu),
@@ -49,7 +51,8 @@ class MediaListScreen extends StatelessWidget {
                 icon: const Icon(Icons.messenger_outline),
               )
             ],
-            bottom: const TabBar(
+            bottom: TabBar(
+              indicatorColor: Theme.of(context).colorScheme.tertiary,
               tabs: tabs,
             ),
           ),
@@ -58,7 +61,7 @@ class MediaListScreen extends StatelessWidget {
               return Center(
                 child: Text(
                   '${tab.text!} Tab',
-                  style: Theme.of(context).textTheme.headline5,
+                  style: Theme.of(context).textTheme.headline4,
                 ),
               );
             }).toList(),

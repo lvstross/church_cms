@@ -28,7 +28,34 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Church CMS',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        colorScheme: const ColorScheme.light(
+          background: Color.fromARGB(255, 230, 229, 229),
+          shadow: Color.fromARGB(255, 218, 218, 218),
+          primary: Color.fromARGB(255, 113, 40, 40),
+          secondary: Color.fromARGB(255, 111, 52, 52),
+          tertiary: Color.fromARGB(255, 223, 223, 223),
+        ),
+        textTheme: const TextTheme(
+          bodySmall:
+              TextStyle(color: Color.fromRGBO(117, 21, 21, 1), fontSize: 12),
+          bodyMedium: TextStyle(color: Colors.black, fontSize: 14),
+          bodyLarge: TextStyle(color: Colors.black, fontSize: 18),
+        ),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: const ColorScheme.dark(
+          background: Color.fromARGB(255, 82, 82, 82),
+          shadow: Color.fromARGB(255, 64, 64, 64),
+          primary: Color.fromARGB(255, 113, 40, 40),
+          secondary: Color.fromARGB(255, 111, 52, 52),
+          tertiary: Color.fromARGB(255, 223, 223, 223),
+        ),
+        textTheme: const TextTheme(
+          bodySmall:
+              TextStyle(color: Color.fromARGB(255, 113, 40, 40), fontSize: 12),
+          bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
+          bodyLarge: TextStyle(color: Colors.white, fontSize: 18),
+        ),
       ),
       home: const Main(),
     );
@@ -60,16 +87,17 @@ class _MainState extends State<Main> {
     return WithHiddenDrawer(
       child: Scaffold(
         body: pages[pageIndex],
-        bottomNavigationBar: SizedBox(
-          height: 80,
+        bottomNavigationBar: Container(
+          color: Theme.of(context).colorScheme.background,
+          height: 85,
           child: Column(
             children: [
               Container(
-                height: 80,
-                padding: const EdgeInsets.only(bottom: 20),
+                height: 60,
+                margin: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary,
-                ),
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: const BorderRadius.all(Radius.circular(30))),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
